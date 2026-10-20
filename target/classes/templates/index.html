@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments :: head('Grain &amp; Affection — Cafeteria Artesanal', 'Cafés especiais, padaria artesanal e atendimento acolhedor. Peça no balcão, na mesa ou por delivery.')}"></head>
+
+<body data-page="home">
+
+  <!-- 1. CABEÇALHO & NAVEGAÇÃO -->
+  <header th:replace="~{fragments :: header('inicio')}"></header>
+
+  <!-- 2. CONTEÚDO PRINCIPAL (UM ÚNICO <main> SEMÂNTICO) -->
+  <main>
+
+    <!-- Hero Section com Carrossel e Typing Effect -->
+    <section class="hero" aria-label="Apresentação">
+      <div class="hero-overlay"></div>
+
+      <!-- Carrossel de Fundo Automático -->
+      <div class="carousel-container">
+        <div class="carousel-slide active">
+          <img th:src="@{/img/cafeteria.jpg}" alt="Ambiente da cafeteria Grain &amp; Affection">
+        </div>
+        <div class="carousel-slide">
+          <img th:src="@{/img/cafe-romantic.jpg}" alt="Xícara de café e ambiente aconchegante">
+        </div>
+        <div class="carousel-slide">
+          <img th:src="@{/img/cafeteria-original.jpg}" alt="Mesas e luz natural no interior da cafeteria">
+        </div>
+      </div>
+
+      <!-- Conteúdo Sobreposto na Hero -->
+      <div class="container hero-content">
+        <span class="hero-tag">Cafeteria Artesanal · Desde 2018</span>
+        <h1 class="hero-title">
+          Onde o Grão Encontra o Afeto: <br>
+          <span class="typing-target">Cafés Especiais</span>
+        </h1>
+        <p class="hero-desc">
+          Café especial 100% arábica, padaria fresquinha e atendimento acolhedor. Peça no balcão, em uma de nossas 15 mesas ou por delivery e desacelere com a gente.
+        </p>
+        <div class="hero-actions">
+          <a th:href="@{/produtos}" class="btn btn-primary">Explorar Cardápio (21 Itens)</a>
+          <a th:href="@{/sobre}" class="btn btn-outline">Nossa História</a>
+        </div>
+      </div>
+
+      <!-- Controles do Carrossel -->
+      <div class="carousel-controls">
+        <button class="carousel-btn carousel-prev" aria-label="Slide anterior">&#10094;</button>
+        <div class="carousel-dots"></div>
+        <button class="carousel-btn carousel-next" aria-label="Próximo slide">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- Seção Destaques do Cardápio (6 Destaques) -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="subtitle-french" style="font-size: 1.5rem;">Seleção Especial</span>
+          <h2>Destaques da Nossa Cozinha</h2>
+          <div class="line-decoration"></div>
+          <p>Preparados diariamente com insumos nobres e o toque inconfundível da nossa torrefação e confeitaria artesanal.</p>
+        </div>
+
+        <!-- Grid Preenchido Dinamicamente pelo servidor (Thymeleaf) -->
+        <div id="featured-products-grid" class="products-grid">
+          <article class="product-card reveal-on-scroll" th:each="p : ${produtosDestaque}" th:attr="data-product-id=${p.id}">
+            <div class="card-img-wrapper">
+              <span class="card-badge" th:if="${!#strings.isEmpty(p.badgeTexto)}" th:classappend="${p.badgeClasse}" th:text="${p.badgeTexto}">Destaque</span>
+              <img th:src="${#strings.isEmpty(p.imagem)} ? @{/img/cardapio.png} : @{${p.imagem}}"
+                th:attr="data-default-src=${p.imagem}"
+                th:alt="${p.nome}"
+                alt="Produto" loading="lazy" onerror="this.onerror=null; this.src='/img/cardapio.png';">
+            </div>
+            <div class="card-body">
+              <span class="card-category" th:text="${p.categoria.nome}">Categoria</span>
+              <h3 class="card-title" th:text="${p.nome}">Nome</h3>
+              <p class="card-desc" th:text="${p.descricao}">Descrição</p>
+              <div class="card-footer">
+                <span class="card-price"
+                  th:text="'R$ ' + ${#numbers.formatDecimal(p.preco, 1, 'POINT', 2, 'COMMA')}">R$ 0,00</span>
+                <a th:href="@{/pedidos(produto=${p.id})}" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;" class="reveal-on-scroll">
+          <a th:href="@{/produtos}" class="btn btn-forest">Ver Cardápio Completo (7 Categorias · 21 Itens)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção História Resumida (Split) -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="about-split">
+          <div class="about-image-frame reveal-on-scroll">
+            <img th:src="@{/img/cafeteria-original.jpg}" alt="Interior aconchegante com mesas de madeira e luz natural">
+          </div>
+
+          <div class="reveal-on-scroll reveal-delay-1">
+            <span class="subtitle-french">A Atmosfera</span>
+            <h2>Um Refúgio para Desacelerar</h2>
+            <div class="line-decoration" style="margin-left: 0;"></div>
+            <p>
+              Na Grain &amp; Affection, cada xícara nasce do cuidado com o grão e do carinho de quem serve. Do balcão
+              às mesas, o ambiente reúne aroma de café fresco, madeira, plantas e música suave.
+            </p>
+            <p>
+              Venha trabalhar, conversar ou simplesmente descansar: aqui você escolhe se prefere atendimento no
+              balcão, em uma das nossas 15 mesas ou receber tudo no conforto de casa por delivery.
+            </p>
+            <div style="margin-top: 2rem;">
+              <a th:href="@{/sobre}" class="btn btn-primary">Conheça Mais Sobre Nós</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Estatísticas com Contadores Animados -->
+        <div class="stats-grid reveal-on-scroll">
+          <div class="stat-card">
+            <div class="stat-number" data-counter="2018">0</div>
+            <div class="stat-label">Ano de Fundação</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-counter="21">0</div>
+            <div class="stat-label">Itens no Cardápio</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-counter="15000">0</div>
+            <div class="stat-label">Xícaras Servidas/Mês</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-counter="100">0</div>
+            <div class="stat-label">% Grãos Arábica</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 3. RODAPÉ INSTITUCIONAL -->
+  <footer th:replace="~{fragments :: footer}"></footer>
+
+  <!-- Scripts Modulares Arquitetados -->
+  <th:block th:replace="~{fragments :: scripts}"></th:block>
+</body>
+
+</html>
