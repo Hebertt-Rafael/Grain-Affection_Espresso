@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments :: head('Sobre Nós — Grain &amp; Affection', 'Conheça a ideia, os ambientes, a localização e a história da cafeteria Grain &amp; Affection.')}"></head>
+
+<body data-page="sobre">
+
+  <!-- CABEÇALHO -->
+  <header th:replace="~{fragments :: header('sobre')}"></header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main>
+
+    <!-- Hero Banner Sobre -->
+    <section class="section section-dark" style="padding: 4rem 0 3rem; text-align: center;">
+      <div class="container reveal-on-scroll">
+        <span class="subtitle-french" style="font-size: 3.2rem;">Sobre a Empresa</span>
+        <h1>A Essência da Grain &amp; Affection</h1>
+        <div class="line-decoration"></div>
+        <p style="max-width: 650px; margin: 0 auto; color: var(--color-warm-gray);">
+          Grãos selecionados, receitas artesanais e um atendimento que trata cada cliente com afeto.
+        </p>
+      </div>
+    </section>
+
+    <!-- 1. Ideia do negócio -->
+    <section class="section">
+      <div class="container">
+        <div class="about-split">
+          <div class="reveal-on-scroll">
+            <span class="subtitle-french" style="font-size: 2rem;">A Ideia do Negócio</span>
+            <h2>Café com Afeto, do Balcão à Entrega</h2>
+            <div class="line-decoration" style="margin-left: 0;"></div>
+
+            <p>
+              A <strong>Grain &amp; Affection</strong> nasceu da vontade de oferecer mais do que uma boa xícara de café:
+              queremos um lugar onde as pessoas se sintam em casa. Trabalhamos com grãos arábica selecionados,
+              padaria e confeitaria feitas diariamente, lanches salgados, opções saudáveis e uma linha de produtos
+              exclusivos para levar para casa.
+            </p>
+
+            <p>
+              Para tornar o atendimento mais ágil e organizado, criamos nossa plataforma digital: o cliente conhece o cardápio com 21 opções, faz
+              seu cadastro e realiza o pedido informando se será atendido no <strong>balcão</strong>, em uma das
+              <strong>15 mesas</strong> ou por <strong>entrega (delivery)</strong>. Os gerentes acompanham tudo em um painel
+              administrativo em tempo real.
+            </p>
+          </div>
+
+          <div class="about-image-frame about-image-vertical reveal-on-scroll reveal-delay-1">
+            <img th:src="@{/img/cafeteria.jpg}" alt="Ambiente principal da cafeteria Grain &amp; Affection">
+          </div>
+        </div>
+
+        <!-- 2. Ambientes internos -->
+        <div class="about-split" style="margin-top: 5rem;">
+          <div class="about-image-frame reveal-on-scroll">
+            <img th:src="@{/img/cafeteria-original.jpg}" alt="Mesas e luz natural no salão da cafeteria">
+          </div>
+
+          <div class="reveal-on-scroll reveal-delay-1">
+            <span class="subtitle-french" style="font-size: 2rem;">Ambientes Internos</span>
+            <h2>Espaços Pensados para Cada Momento</h2>
+            <div class="line-decoration" style="margin-left: 0;"></div>
+
+            <p>
+              <strong>Balcão Espresso:</strong> para quem tem pressa e quer o café fresquinho, com vitrine aquecida de pães, croissants, bolos e doces à vista.
+            </p>
+            <p>
+              <strong>Salão com 15 mesas:</strong> ambiente iluminado, com madeira natural, plantas e música acústica suave, ideal para reuniões rápidas, estudo ou uma conversa demorada.
+            </p>
+            <p>
+              <strong>Cantinho de leitura &amp; Empório:</strong> poltronas confortáveis e estante com nossos cafés em grãos, canecas de cerâmica e geleias artesanais.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3. Localização -->
+        <div class="about-split" style="margin-top: 5rem;">
+          <div class="reveal-on-scroll">
+            <span class="subtitle-french" style="font-size: 2rem;">Localização</span>
+            <h2>Fácil de Chegar</h2>
+            <div class="line-decoration" style="margin-left: 0;"></div>
+
+            <p>
+              Estamos na <strong>Rua Augusta, 1200 — Consolação, São Paulo/SP</strong>, a poucos passos da Avenida
+              Paulista e próximo ao metrô Consolação.
+            </p>
+            <p>
+              Funcionamos de segunda a sexta, das 07h30 às 20h00; aos sábados, das 08h00 às 22h00; e aos domingos,
+              das 08h30 às 19h00. Atendemos também por delivery em toda a região central.
+            </p>
+            <div style="margin-top: 2rem;">
+              <a th:href="@{/contato}" class="btn btn-forest">Ver Contato Completo</a>
+            </div>
+          </div>
+
+          <div class="about-image-frame about-image-vertical reveal-on-scroll reveal-delay-1">
+            <img th:src="@{/img/cafe-romantic.jpg}" alt="Xícara de café servida na cafeteria">
+          </div>
+        </div>
+
+        <!-- 4. Memorial: a história do café -->
+        <div class="reveal-on-scroll" style="margin-top: 5rem; max-width: 820px; margin-left: auto; margin-right: auto;">
+          <div style="text-align: center;">
+            <span class="subtitle-french" style="font-size: 2rem;">Memorial</span>
+            <h2>A História do Café</h2>
+            <div class="line-decoration"></div>
+          </div>
+
+          <p>
+            Segundo a lenda, o café foi descoberto na Etiópia, por volta do século IX, quando o pastor Kaldi notou que
+            suas cabras ficavam cheias de energia depois de comer os frutos vermelhos de um arbusto. Dali, a bebida atravessou
+            o Mar Vermelho e chegou à Arábia, onde passou a ser torrada, preparada e apreciada em casas de sabedoria e convívio.
+          </p>
+          <p>
+            No século XVII, o café chegou à Europa e conquistou as cortes, artistas e intelectuais. As sementes foram
+            trazidas para as Américas no século XVIII e, em 1727, chegaram ao Brasil, no Pará. A cultura se expandiu
+            pelo Vale do Paraíba, São Paulo e Minas Gerais, consagrando o Brasil como referência mundial em qualidade cafeeira.
+          </p>
+          <p>
+            Hoje, o cafezinho é símbolo da hospitalidade brasileira. A Grain &amp; Affection homenageia
+            essa trajetória servindo cada xícara com o cuidado de quem sabe que um bom café aproxima pessoas.
+          </p>
+        </div>
+
+        <!-- Pilares / Diferenciais -->
+        <div class="stats-grid reveal-on-scroll" style="margin-top: 5rem;">
+          <div class="stat-card">
+            <h3 style="color: var(--color-forest); margin-bottom: 0.5rem;">Grãos Selecionados</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 0;">Arábica de torra média, moído na hora para cada extração.</p>
+          </div>
+          <div class="stat-card">
+            <h3 style="color: var(--color-forest); margin-bottom: 0.5rem;">Padaria Fresca</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 0;">Pães, croissants e doces assados diariamente.</p>
+          </div>
+          <div class="stat-card">
+            <h3 style="color: var(--color-forest); margin-bottom: 0.5rem;">3 Formas de Atender</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 0;">Balcão, mesas de 1 a 15 ou entrega rápida na sua casa.</p>
+          </div>
+          <div class="stat-card">
+            <h3 style="color: var(--color-forest); margin-bottom: 0.5rem;">Pedido Digital</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 0;">Acompanhe seus pedidos online, com agilidade e precisão.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer th:replace="~{fragments :: footer}"></footer>
+  <th:block th:replace="~{fragments :: scripts}"></th:block>
+</body>
+
+</html>
