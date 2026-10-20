@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel do Gerente — Grain &amp; Affection</title>
+  <meta name="description" content="Painel administrativo para gerenciamento de pedidos em atendimento e finalizados.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body data-page="admin">
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Navegação Principal">
+        <a href="../index.html" class="brand-logo">
+          <div class="logo-icon">GA</div>
+          <span class="logo-text">Grain <span>&amp; Affection</span></span>
+        </a>
+
+        <button class="mobile-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links">
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="produtos.html">Cardápio</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="pedidos.html" class="nav-cta">Fazer Pedido</a></li>
+          <li class="nav-admin-only" hidden><a href="admin.html" class="active">Painel</a></li>
+          <li><a href="login.html">Entrar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section-dark" style="padding: 4rem 0 3rem; text-align: center;">
+      <div class="container reveal-on-scroll">
+        <span class="subtitle-french" style="font-size: 3rem;">Tableau de Bord</span>
+        <h1>Painel Administrativo de Pedidos</h1>
+        <div class="line-decoration"></div>
+        <p style="max-width: 620px; margin: 0 auto; color: var(--color-warm-gray);">
+          Acompanhe os pedidos de Balcão, Mesas (1 a 15) e Entrega, e finalize os atendimentos concluídos.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- KPIs do Gerente -->
+        <div class="admin-kpi-grid reveal-on-scroll">
+          <div class="admin-kpi-card">
+            <div class="kpi-label">Em Atendimento</div>
+            <div class="kpi-value" id="count-em-atendimento">3</div>
+          </div>
+          <div class="admin-kpi-card">
+            <div class="kpi-label">Finalizados</div>
+            <div class="kpi-value" id="count-finalizados">2</div>
+          </div>
+          <div class="admin-kpi-card">
+            <div class="kpi-label">Total de Pedidos</div>
+            <div class="kpi-value" id="kpi-total-pedidos">5</div>
+          </div>
+          <div class="admin-kpi-card">
+            <div class="kpi-label">Volume Total</div>
+            <div class="kpi-value" id="kpi-receita-total">R$ 261,95</div>
+          </div>
+        </div>
+
+        <div class="filters-bar">
+          <a href="#em-atendimento" id="tab-em-atendimento" class="filter-btn active">Em Atendimento</a>
+          <a href="#finalizados" id="tab-finalizados" class="filter-btn">Finalizados</a>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Data</th>
+                <th>Cliente</th>
+                <th>Itens</th>
+                <th>Atendimento</th>
+                <th>Observações</th>
+                <th>Total</th>
+                <th id="th-acao">Ação</th>
+              </tr>
+            </thead>
+            <tbody id="admin-orders-tbody">
+              <!-- Preenchido dinamicamente pelo main.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="logo-icon">GA</div>
+            <span class="logo-text">Grain <span>&amp; Affection</span></span>
+          </div>
+          <p>Cafés especiais, padaria artesanal e muito afeto em cada pedido. Atendimento no balcão, nas 15 mesas ou por delivery.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="produtos.html">Cardápio Completo</a></li>
+            <li><a href="pedidos.html">Pedidos Online</a></li>
+            <li><a href="contato.html">Contato &amp; Reservas</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Horários</h4>
+          <ul class="footer-links">
+            <li>Seg - Sex: 07h30 às 20h00</li>
+            <li>Sábado: 08h00 às 22h00</li>
+            <li>Domingo: 08h30 às 19h00</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Localização</h4>
+          <p>Rua Augusta, 1200 — Consolação<br>São Paulo, SP</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Grain &amp; Affection Espresso. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/animations.js"></script>
+  <script src="../js/components/navbar.js"></script>
+  <script src="../js/components/carousel.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

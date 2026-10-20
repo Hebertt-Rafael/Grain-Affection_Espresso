@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<!-- Fragmento: <head> comum a todas as páginas -->
+<head th:fragment="head(titulo, descricao)">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:text="${titulo}">Grain &amp; Affection</title>
+  <meta name="description" th:content="${descricao}" content="Grain &amp; Affection — cafeteria artesanal">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+  <!-- Fragmento: cabeçalho + navegação (com estado de login) -->
+  <header class="site-header" th:fragment="header(ativo)">
+    <div class="container">
+      <nav class="navbar" aria-label="Navegação Principal">
+        <a th:href="@{/}" class="brand-logo">
+          <div class="logo-icon">GA</div>
+          <span class="logo-text">Grain <span>&amp; Affection</span></span>
+        </a>
+
+        <button class="mobile-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links">
+          <li><a th:href="@{/}" th:classappend="${ativo == 'inicio'} ? 'active'">Início</a></li>
+          <li><a th:href="@{/sobre}" th:classappend="${ativo == 'sobre'} ? 'active'">Sobre Nós</a></li>
+          <li><a th:href="@{/produtos}" th:classappend="${ativo == 'produtos'} ? 'active'">Cardápio</a></li>
+          <li><a th:href="@{/contato}" th:classappend="${ativo == 'contato'} ? 'active'">Contato</a></li>
+          <li><a th:href="@{/pedidos}" class="nav-cta" th:classappend="${ativo == 'pedidos'} ? 'active'">Fazer
+              Pedido</a></li>
+
+          <!-- Visitante -->
+          <li th:if="${usuarioLogado == null}"><a th:href="@{/login}"
+              th:classappend="${ativo == 'login'} ? 'active'">Entrar</a></li>
+
+          <!-- Usuário autenticado -->
+          <li th:if="${usuarioLogado != null and usuarioLogado.gerente}"><a th:href="@{/admin}"
+              th:classappend="${ativo == 'admin'} ? 'active'">Painel</a></li>
+          <li th:if="${usuarioLogado != null}" class="nav-user">
+            <span th:text="'Olá, ' + ${#strings.arraySplit(usuarioLogado.nome, ' ')[0]}">Olá</span>
+          </li>
+          <li th:if="${usuarioLogado != null}"><a th:href="@{/logout}">Sair</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Fragmento: rodapé institucional -->
+  <footer class="site-footer" th:fragment="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="logo-icon">GA</div>
+            <span class="logo-text">Grain <span>&amp; Affection</span></span>
+          </div>
+          <p>Cafés especiais, padaria artesanal e muito afeto em cada pedido. Atendimento no balcão, nas mesas ou por delivery.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul class="footer-links">
+            <li><a th:href="@{/}">Início</a></li>
+            <li><a th:href="@{/sobre}">Sobre Nós</a></li>
+            <li><a th:href="@{/produtos}">Cardápio Completo</a></li>
+            <li><a th:href="@{/pedidos}">Pedidos Online</a></li>
+            <li><a th:href="@{/contato}">Contato &amp; Reservas</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Horários</h4>
+          <ul class="footer-links">
+            <li>Seg - Sex: 07h30 às 20h00</li>
+            <li>Sábado: 08h00 às 22h00</li>
+            <li>Domingo: 08h30 às 19h00</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Localização</h4>
+          <p>Rua Augusta, 1200 — Consolação<br>São Paulo, SP</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Grain &amp; Affection. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Fragmento: scripts globais (animações, navbar, entry point) -->
+  <th:block th:fragment="scripts">
+    <script th:src="@{/js/animations.js}"></script>
+    <script th:src="@{/js/components/navbar.js}"></script>
+    <script th:src="@{/js/components/carousel.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
+  </th:block>
+
+  <!-- Fragmento: mensagens flash/alerta -->
+  <th:block th:fragment="mensagens">
+    <div class="alert alert-success" th:if="${mensagemSucesso}" th:text="${mensagemSucesso}"></div>
+    <div class="alert alert-error" th:if="${mensagemErro}" th:text="${mensagemErro}"></div>
+    <div class="alert alert-warning" th:if="${mensagemAlerta}" th:text="${mensagemAlerta}"></div>
+  </th:block>
+
+</body>
+
+</html>

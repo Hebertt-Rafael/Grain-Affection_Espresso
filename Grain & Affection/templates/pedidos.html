@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedidos Online — Grain &amp; Affection</title>
+  <meta name="description" content="Faça seu pedido online para retirada rápida no balcão, atendimento nas 15 mesas ou entrega por delivery.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body data-page="pedidos">
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Navegação Principal">
+        <a href="../index.html" class="brand-logo">
+          <div class="logo-icon">GA</div>
+          <span class="logo-text">Grain <span>&amp; Affection</span></span>
+        </a>
+
+        <button class="mobile-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links">
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="produtos.html">Cardápio</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="pedidos.html" class="nav-cta active">Fazer Pedido</a></li>
+          <li class="nav-admin-only" hidden><a href="admin.html">Painel</a></li>
+          <li><a href="login.html">Entrar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section section-dark" style="padding: 4rem 0 3rem; text-align: center;">
+      <div class="container reveal-on-scroll">
+        <span class="subtitle-french" style="font-size: 3.2rem;">Faça seu pedido online</span>
+        <h1>Realize seu Pedido</h1>
+        <div class="line-decoration"></div>
+        <p style="max-width: 600px; margin: 0 auto; color: var(--color-warm-gray);">
+          Escolha suas delícias favoritas e receba em uma de nossas 15 mesas, retire no balcão ou peça entrega por delivery.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <div class="form-card reveal-on-scroll">
+          <form id="order-form" data-standalone-form="true">
+
+            <div class="form-group">
+              <label for="cliente-display" class="form-label">Cliente Identificado</label>
+              <input type="text" id="cliente-display" class="form-control" placeholder="Faça login para identificar sua conta" readonly>
+            </div>
+
+            <div class="form-group">
+              <label for="produto-select" class="form-label">Escolha o Item do Cardápio (21 opções)</label>
+              <select id="produto-select" class="form-control" required>
+                <option value="">Selecione um item do cardápio...</option>
+                <optgroup label="1. Bebidas Quentes">
+                  <option value="1" data-preco="14.80" data-nome="Café Expresso">Café Expresso — R$ 14,80</option>
+                  <option value="2" data-preco="26.65" data-nome="Cappuccino">Cappuccino — R$ 26,65</option>
+                  <option value="3" data-preco="28.50" data-nome="Mocaccino">Mocaccino — R$ 28,50</option>
+                </optgroup>
+                <optgroup label="2. Bebidas Geladas">
+                  <option value="4" data-preco="24.50" data-nome="Café Gelado (Iced Coffee)">Café Gelado (Iced Coffee) — R$ 24,50</option>
+                  <option value="5" data-preco="27.90" data-nome="Cold Brew">Cold Brew — R$ 27,90</option>
+                  <option value="6" data-preco="31.00" data-nome="Frappé">Frappé — R$ 31,00</option>
+                </optgroup>
+                <optgroup label="3. Padaria e Confeitaria">
+                  <option value="7" data-preco="16.50" data-nome="Croissant">Croissant — R$ 16,50</option>
+                  <option value="8" data-preco="18.90" data-nome="Brownie">Brownie — R$ 18,90</option>
+                  <option value="9" data-preco="24.00" data-nome="Cheesecake">Cheesecake — R$ 24,00</option>
+                </optgroup>
+                <optgroup label="4. Lanches Salgados">
+                  <option value="10" data-preco="26.00" data-nome="Sanduíche Natural">Sanduíche Natural — R$ 26,00</option>
+                  <option value="11" data-preco="22.50" data-nome="Misto Quente">Misto Quente — R$ 22,50</option>
+                  <option value="12" data-preco="12.00" data-nome="Pão de Queijo Recheado">Pão de Queijo Recheado — R$ 12,00</option>
+                </optgroup>
+                <optgroup label="5. Sobremesas">
+                  <option value="13" data-preco="34.00" data-nome="Tiramisù">Tiramisù — R$ 34,00</option>
+                  <option value="14" data-preco="36.50" data-nome="Petit Gâteau">Petit Gâteau — R$ 36,50</option>
+                  <option value="15" data-preco="21.00" data-nome="Pudim">Pudim — R$ 21,00</option>
+                </optgroup>
+                <optgroup label="6. Opções Saudáveis">
+                  <option value="16" data-preco="21.50" data-nome="Salada de Frutas">Salada de Frutas — R$ 21,50</option>
+                  <option value="17" data-preco="23.00" data-nome="Iogurte com Granola">Iogurte com Granola — R$ 23,00</option>
+                  <option value="18" data-preco="22.00" data-nome="Tapioca">Tapioca — R$ 22,00</option>
+                </optgroup>
+                <optgroup label="7. Produtos para Venda">
+                  <option value="19" data-preco="48.00" data-nome="Grãos de Café Especiais (250g)">Grãos de Café Especiais (250g) — R$ 48,00</option>
+                  <option value="20" data-preco="55.00" data-nome="Caneca Personalizada">Caneca Personalizada — R$ 55,00</option>
+                  <option value="21" data-preco="32.00" data-nome="Geleia Artesanal">Geleia Artesanal — R$ 32,00</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="quantidade" class="form-label">Quantidade</label>
+              <input type="number" id="quantidade" class="form-control" min="1" max="20" value="1" required>
+            </div>
+
+            <div class="form-group">
+              <label for="tipoAtendimento" class="form-label">Tipo de Atendimento</label>
+              <select id="tipoAtendimento" class="form-control" required>
+                <option value="BALCAO">Balcão (Retirada Rápida)</option>
+                <option value="MESA">Mesa (Salão — Mesas 1 a 15)</option>
+                <option value="ENTREGA">Entrega / Delivery (+ R$ 5,00)</option>
+              </select>
+            </div>
+
+            <div class="form-group" id="grupo-mesa" hidden>
+              <label for="numeroMesa" class="form-label">Número da Mesa (1 a 15)</label>
+              <input type="number" id="numeroMesa" class="form-control" min="1" max="15" placeholder="Ex: 4">
+            </div>
+
+            <div class="form-group" id="grupo-endereco" hidden>
+              <label for="enderecoEntrega" class="form-label">Endereço de Entrega</label>
+              <input type="text" id="enderecoEntrega" class="form-control" placeholder="Rua Oscar Freire, 15 - Jardins">
+            </div>
+
+            <div class="form-group">
+              <label for="observacoes" class="form-label">Observações Especiais (Opcional)</label>
+              <textarea id="observacoes" class="form-control" rows="3"
+                placeholder="Ex: Leite vegetal de aveia, pouco açúcar, embalar para presente..."></textarea>
+            </div>
+
+            <div id="order-summary" class="order-summary-box">
+              <p class="text-muted" style="margin: 0; font-size: 0.95rem;">Selecione um produto acima para calcular o valor do pedido.</p>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.1rem;">
+              Confirmar &amp; Enviar Pedido
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="logo-icon">GA</div>
+            <span class="logo-text">Grain <span>&amp; Affection</span></span>
+          </div>
+          <p>Cafés especiais, padaria artesanal e muito afeto em cada pedido. Atendimento no balcão, nas 15 mesas ou por delivery.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="produtos.html">Cardápio Completo</a></li>
+            <li><a href="pedidos.html">Pedidos Online</a></li>
+            <li><a href="contato.html">Contato &amp; Reservas</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Horários</h4>
+          <ul class="footer-links">
+            <li>Seg - Sex: 07h30 às 20h00</li>
+            <li>Sábado: 08h00 às 22h00</li>
+            <li>Domingo: 08h30 às 19h00</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Localização</h4>
+          <p>Rua Augusta, 1200 — Consolação<br>São Paulo, SP</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Grain &amp; Affection Espresso. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/animations.js"></script>
+  <script src="../js/components/navbar.js"></script>
+  <script src="../js/components/carousel.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/pages/pedidos-form.js"></script>
+</body>
+
+</html>

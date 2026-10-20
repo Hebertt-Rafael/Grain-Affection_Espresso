@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato &amp; Reservas — Grain &amp; Affection</title>
+  <meta name="description" content="Entre em contato com a cafeteria Grain &amp; Affection para reservas, eventos ou dúvidas.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body data-page="contato">
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Navegação Principal">
+        <a href="../index.html" class="brand-logo">
+          <div class="logo-icon">GA</div>
+          <span class="logo-text">Grain <span>&amp; Affection</span></span>
+        </a>
+
+        <button class="mobile-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links">
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="produtos.html">Cardápio</a></li>
+          <li><a href="contato.html" class="active">Contato</a></li>
+          <li><a href="pedidos.html" class="nav-cta">Fazer Pedido</a></li>
+          <li class="nav-admin-only" hidden><a href="admin.html">Painel</a></li>
+          <li><a href="login.html">Entrar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section section-dark" style="padding: 4rem 0 3rem; text-align: center;">
+      <div class="container reveal-on-scroll">
+        <span class="subtitle-french" style="font-size: 3.2rem;">Entre em Contato</span>
+        <h1>Fale Conosco &amp; Reservas</h1>
+        <div class="line-decoration"></div>
+        <p style="max-width: 600px; margin: 0 auto; color: var(--color-warm-gray);">
+          Será um prazer receber você na Grain &amp; Affection. Envie sua mensagem, solicite reserva de mesa ou planeje seu evento.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <div class="about-split" style="align-items: flex-start;">
+
+          <div class="reveal-on-scroll">
+            <span class="subtitle-french" style="font-size: 2.5rem;">Nossa Casa</span>
+            <h2>Onde nos Encontrar</h2>
+            <div class="line-decoration" style="margin-left: 0;"></div>
+
+            <p>
+              Estamos na Consolação, região central de São Paulo, a poucos passos da Avenida Paulista.
+            </p>
+
+            <div style="margin: 2rem 0; display: flex; flex-direction: column; gap: 1.5rem;">
+              <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                <div style="background: var(--color-forest-soft); color: var(--color-forest); width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">📍</div>
+                <div>
+                  <h4 style="margin-bottom: 0.2rem;">Endereço</h4>
+                  <p style="margin: 0;">Rua Augusta, 1200 — Consolação, São Paulo/SP</p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                <div style="background: var(--color-forest-soft); color: var(--color-forest); width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">📞</div>
+                <div>
+                  <h4 style="margin-bottom: 0.2rem;">Telefone / WhatsApp</h4>
+                  <p style="margin: 0;">(11) 3000-1234 / WhatsApp (11) 98765-4321</p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                <div style="background: var(--color-forest-soft); color: var(--color-forest); width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">✉️</div>
+                <div>
+                  <h4 style="margin-bottom: 0.2rem;">E-mail Geral</h4>
+                  <p style="margin: 0;">contato@grainaffection.com.br</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-image-frame about-image-vertical" style="margin-top: 2rem; margin-left: 0;">
+              <img src="../img/cafeteria.jpg" alt="Ambiente da cafeteria Grain &amp; Affection">
+            </div>
+          </div>
+
+          <div class="form-card reveal-on-scroll reveal-delay-1" style="margin: 0; width: 100%;">
+            <h3 style="margin-bottom: 1.5rem;">Envie uma Mensagem</h3>
+
+            <form id="contact-form"
+              onsubmit="event.preventDefault(); GrainAnimations.showToast('Mensagem enviada com sucesso! Responderemos em breve.', 'success'); this.reset();">
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Seu Nome</label>
+                <input type="text" id="contact-name" class="form-control" placeholder="Seu nome completo" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Seu E-mail</label>
+                <input type="email" id="contact-email" class="form-control" placeholder="seuemail@exemplo.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-assunto" class="form-label">Assunto</label>
+                <select id="contact-assunto" class="form-control" required>
+                  <option value="">Selecione um assunto...</option>
+                  <option value="reserva">Reserva de Mesa (1 a 15)</option>
+                  <option value="eventos">Eventos Privados &amp; Brunch</option>
+                  <option value="imprensa">Fornecedores &amp; Parcerias</option>
+                  <option value="duvidas">Elogios &amp; Dúvidas</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-msg" class="form-label">Mensagem</label>
+                <textarea id="contact-msg" class="form-control" rows="5"
+                  placeholder="Escreva sua mensagem com detalhes..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-forest" style="width: 100%; padding: 1rem;">
+                Enviar Mensagem
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="logo-icon">GA</div>
+            <span class="logo-text">Grain <span>&amp; Affection</span></span>
+          </div>
+          <p>Cafés especiais, padaria artesanal e muito afeto em cada pedido. Atendimento no balcão, nas 15 mesas ou por delivery.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="produtos.html">Cardápio Completo</a></li>
+            <li><a href="pedidos.html">Pedidos Online</a></li>
+            <li><a href="contato.html">Contato &amp; Reservas</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Horários</h4>
+          <ul class="footer-links">
+            <li>Seg - Sex: 07h30 às 20h00</li>
+            <li>Sábado: 08h00 às 22h00</li>
+            <li>Domingo: 08h30 às 19h00</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Localização</h4>
+          <p>Rua Augusta, 1200 — Consolação<br>São Paulo, SP</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Grain &amp; Affection Espresso. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/animations.js"></script>
+  <script src="../js/components/navbar.js"></script>
+  <script src="../js/components/carousel.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

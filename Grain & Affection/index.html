@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grain &amp; Affection — Cafeteria Artesanal</title>
+  <meta name="description" content="Cafés especiais, padaria artesanal e atendimento acolhedor. Peça no balcão, na mesa ou por delivery.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="home">
+
+  <!-- 1. CABEÇALHO & NAVEGAÇÃO -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Navegação Principal">
+        <a href="index.html" class="brand-logo">
+          <div class="logo-icon">GA</div>
+          <span class="logo-text">Grain <span>&amp; Affection</span></span>
+        </a>
+
+        <button class="mobile-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Início</a></li>
+          <li><a href="/templates/sobre.html">Sobre Nós</a></li>
+          <li><a href="/templates/produtos.html">Cardápio</a></li>
+          <li><a href="/templates/contato.html">Contato</a></li>
+          <li><a href="/templates/pedidos.html" class="nav-cta">Fazer Pedido</a></li>
+          <li class="nav-admin-only" hidden><a href="/templates/admin.html">Painel</a></li>
+          <li><a href="/templates/login.html">Entrar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 2. CONTEÚDO PRINCIPAL -->
+  <main>
+
+    <!-- Hero Section com Carrossel e Typing Effect -->
+    <section class="hero" aria-label="Apresentação">
+      <div class="hero-overlay"></div>
+
+      <!-- Carrossel de Fundo Automático -->
+      <div class="carousel-container">
+        <div class="carousel-slide active">
+          <img src="img/cafeteria.jpg" alt="Ambiente da cafeteria Grain &amp; Affection">
+        </div>
+        <div class="carousel-slide">
+          <img src="img/cafe-romantic.jpg" alt="Xícara de café e ambiente aconchegante">
+        </div>
+        <div class="carousel-slide">
+          <img src="img/cafeteria-original.jpg" alt="Mesas e luz natural no interior da cafeteria">
+        </div>
+      </div>
+
+      <!-- Conteúdo Sobreposto na Hero -->
+      <div class="container hero-content">
+        <span class="hero-tag">Cafeteria Artesanal · Desde 2018</span>
+        <h1 class="hero-title">
+          Onde o Grão Encontra o Afeto: <br>
+          <span class="typing-target">Cafés Especiais</span>
+        </h1>
+        <p class="hero-desc">
+          Café especial 100% arábica, padaria fresquinha e atendimento acolhedor. Peça no balcão, em uma de nossas 15 mesas ou por delivery e desacelere com a gente.
+        </p>
+        <div class="hero-actions">
+          <a href="/templates/produtos.html" class="btn btn-primary">Explorar Cardápio (21 Itens)</a>
+          <a href="/templates/sobre.html" class="btn btn-outline">Nossa História</a>
+        </div>
+      </div>
+
+      <!-- Controles do Carrossel -->
+      <div class="carousel-controls">
+        <button class="carousel-btn carousel-prev" aria-label="Slide anterior">&#10094;</button>
+        <div class="carousel-dots"></div>
+        <button class="carousel-btn carousel-next" aria-label="Próximo slide">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- Seção Destaques do Cardápio (6 Destaques) -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="subtitle-french" style="font-size: 1.5rem;">Seleção Especial</span>
+          <h2>Destaques da Nossa Cozinha</h2>
+          <div class="line-decoration"></div>
+          <p>Preparados diariamente com insumos nobres e o toque inconfundível da nossa torrefação e confeitaria artesanal.</p>
+        </div>
+
+        <div id="featured-products-grid" class="products-grid">
+          <!-- Destaque 1 -->
+          <article class="product-card reveal-on-scroll" data-product-id="1">
+            <div class="card-img-wrapper">
+              <span class="card-badge badge-bestseller">Clássico</span>
+              <img src="img/espresso.jpg" data-default-src="img/espresso.jpg" alt="Café Expresso" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Bebidas Quentes</span>
+              <h3 class="card-title">Café Expresso</h3>
+              <p class="card-desc">Extrato puro de grão 100% arábica de torra média, crema aveludada e notas intensas de cacau e caramelo.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 14,80</span>
+                <a href="/templates/pedidos.html?produto=1" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Destaque 2 -->
+          <article class="product-card reveal-on-scroll" data-product-id="2">
+            <div class="card-img-wrapper">
+              <span class="card-badge badge-bestseller">Mais Pedido</span>
+              <img src="img/cappuccino.jpg" data-default-src="img/cappuccino.jpg" alt="Cappuccino" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Bebidas Quentes</span>
+              <h3 class="card-title">Cappuccino</h3>
+              <p class="card-desc">Harmonia perfeita entre espresso encorpado, leite vaporizado em microespuma sedosa e toque de canela.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 26,65</span>
+                <a href="/templates/pedidos.html?produto=2" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Destaque 3 -->
+          <article class="product-card reveal-on-scroll" data-product-id="5">
+            <div class="card-img-wrapper">
+              <span class="card-badge badge-new">18h Infusão</span>
+              <img src="img/coldbrew.jpg" data-default-src="img/coldbrew.jpg" alt="Cold Brew" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Bebidas Geladas</span>
+              <h3 class="card-title">Cold Brew</h3>
+              <p class="card-desc">Café especial infusionado a frio lentamente por 18 horas, suave, refrescante e com notas cítricas.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 27,90</span>
+                <a href="/templates/pedidos.html?produto=5" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Destaque 4 -->
+          <article class="product-card reveal-on-scroll" data-product-id="7">
+            <div class="card-img-wrapper">
+              <span class="card-badge badge-bestseller">Fornada do Dia</span>
+              <img src="img/croissant.jpg" data-default-src="img/croissant.jpg" alt="Croissant" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Padaria e Confeitaria</span>
+              <h3 class="card-title">Croissant</h3>
+              <p class="card-desc">Massa folhada francesa de fermentação lenta, dourada e crocante por fora e macia com manteiga extra por dentro.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 16,50</span>
+                <a href="/templates/pedidos.html?produto=7" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Destaque 5 -->
+          <article class="product-card reveal-on-scroll" data-product-id="9">
+            <div class="card-img-wrapper">
+              <span class="card-badge badge-new">Chef Pâtissier</span>
+              <img src="img/cheesecake.jpg" data-default-src="img/cheesecake.jpg" alt="Cheesecake" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Padaria e Confeitaria</span>
+              <h3 class="card-title">Cheesecake</h3>
+              <p class="card-desc">Base crocante amanteigada, creme suave de cream cheese com toque cítrico e calda rústica de frutas vermelhas.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 24,00</span>
+                <a href="/templates/pedidos.html?produto=9" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Destaque 6 -->
+          <article class="product-card reveal-on-scroll" data-product-id="13">
+            <div class="card-img-wrapper">
+              <span class="card-badge badge-bestseller">Especialidade</span>
+              <img src="img/tiramisu.jpg" data-default-src="img/tiramisu.jpg" alt="Tiramisù" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Sobremesas</span>
+              <h3 class="card-title">Tiramisù</h3>
+              <p class="card-desc">Sobremesa clássica italiana com biscoitos embebidos em café espresso, creme de mascarpone e cacau puro.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 34,00</span>
+                <a href="/templates/pedidos.html?produto=13" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;" class="reveal-on-scroll">
+          <a href="/templates/produtos.html" class="btn btn-forest">Ver Cardápio Completo (7 Categorias · 21 Itens)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção História Resumida (Split) -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="about-split">
+          <div class="about-image-frame reveal-on-scroll">
+            <img src="img/cafeteria-original.jpg" alt="Interior aconchegante com mesas de madeira e luz natural">
+          </div>
+
+          <div class="reveal-on-scroll reveal-delay-1">
+            <span class="subtitle-french">A Atmosfera</span>
+            <h2>Um Refúgio para Desacelerar</h2>
+            <div class="line-decoration" style="margin-left: 0;"></div>
+            <p>
+              Na Grain &amp; Affection, cada xícara nasce do cuidado com o grão e do carinho de quem serve. Do balcão
+              às mesas, o ambiente reúne aroma de café fresco, madeira, plantas e música suave.
+            </p>
+            <p>
+              Venha trabalhar, conversar ou simplesmente descansar: aqui você escolhe se prefere atendimento no
+              balcão, em uma das nossas 15 mesas ou receber tudo no conforto de casa por delivery.
+            </p>
+            <div style="margin-top: 2rem;">
+              <a href="/templates/sobre.html" class="btn btn-primary">Conheça Mais Sobre Nós</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Estatísticas com Contadores Animados -->
+        <div class="stats-grid reveal-on-scroll">
+          <div class="stat-card">
+            <div class="stat-number" data-counter="2018">0</div>
+            <div class="stat-label">Ano de Fundação</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-counter="21">0</div>
+            <div class="stat-label">Itens no Cardápio</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-counter="15000">0</div>
+            <div class="stat-label">Xícaras Servidas/Mês</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-counter="100">0</div>
+            <div class="stat-label">% Grãos Arábica</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 3. RODAPÉ INSTITUCIONAL -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="logo-icon">GA</div>
+            <span class="logo-text">Grain <span>&amp; Affection</span></span>
+          </div>
+          <p>Cafés especiais, padaria artesanal e muito afeto em cada pedido. Atendimento no balcão, nas 15 mesas ou por delivery.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="/templates/sobre.html">Sobre Nós</a></li>
+            <li><a href="/templates/produtos.html">Cardápio Completo</a></li>
+            <li><a href="/templates/pedidos.html">Pedidos Online</a></li>
+            <li><a href="/templates/contato.html">Contato &amp; Reservas</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Horários</h4>
+          <ul class="footer-links">
+            <li>Seg - Sex: 07h30 às 20h00</li>
+            <li>Sábado: 08h00 às 22h00</li>
+            <li>Domingo: 08h30 às 19h00</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Localização</h4>
+          <p>Rua Augusta, 1200 — Consolação<br>São Paulo, SP</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Grain &amp; Affection Espresso. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts Modulares -->
+  <script src="js/animations.js"></script>
+  <script src="js/components/navbar.js"></script>
+  <script src="js/components/carousel.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

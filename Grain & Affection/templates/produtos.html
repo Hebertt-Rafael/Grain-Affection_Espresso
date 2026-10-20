@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio Completo — Grain &amp; Affection</title>
+  <meta name="description" content="Explore nosso cardápio completo com 21 criações em 7 categorias: cafés especiais, bebidas geladas, padaria, salgados, sobremesas, saudáveis e empório.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body data-page="cardapio">
+
+  <!-- CABEÇALHO -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Navegação Principal">
+        <a href="../index.html" class="brand-logo">
+          <div class="logo-icon">GA</div>
+          <span class="logo-text">Grain <span>&amp; Affection</span></span>
+        </a>
+
+        <button class="mobile-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links">
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="produtos.html" class="active">Cardápio</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="pedidos.html" class="nav-cta">Fazer Pedido</a></li>
+          <li class="nav-admin-only" hidden><a href="admin.html">Painel</a></li>
+          <li><a href="login.html">Entrar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Banner do Cardápio -->
+    <section class="section section-dark" style="padding: 4rem 0 3rem; text-align: center;">
+      <div class="container reveal-on-scroll">
+        <span class="subtitle-french" style="font-size: 3.2rem;">Nosso Cardápio Gourmet</span>
+        <h1>Cardápio &amp; Criações</h1>
+        <div class="line-decoration"></div>
+        <p style="max-width: 660px; margin: 0 auto; color: var(--color-warm-gray);">
+          21 criações autorais divididas em 7 categorias, preparadas na hora por nossos baristas e mestres pâtissiers.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- Barra de Busca -->
+        <div class="menu-toolbar reveal-on-scroll">
+          <div class="menu-search-box">
+            <span class="menu-search-icon">🔍</span>
+            <input type="search" id="menu-search-input" placeholder="Buscar no cardápio (ex: cappuccino, croissant, tiramisù, vegano...)">
+          </div>
+        </div>
+
+        <!-- Filtros das 7 Categorias -->
+        <div id="category-filters" class="filters-bar reveal-on-scroll">
+          <a href="#todos" class="filter-btn active" data-cat-id="0">Todos (21)</a>
+          <a href="#quentes" class="filter-btn" data-cat-id="1">1. Bebidas Quentes (3)</a>
+          <a href="#geladas" class="filter-btn" data-cat-id="2">2. Bebidas Geladas (3)</a>
+          <a href="#padaria" class="filter-btn" data-cat-id="3">3. Padaria e Confeitaria (3)</a>
+          <a href="#salgados" class="filter-btn" data-cat-id="4">4. Lanches Salgados (3)</a>
+          <a href="#sobremesas" class="filter-btn" data-cat-id="5">5. Sobremesas (3)</a>
+          <a href="#saudaveis" class="filter-btn" data-cat-id="6">6. Opções Saudáveis (3)</a>
+          <a href="#venda" class="filter-btn" data-cat-id="7">7. Produtos para Venda (3)</a>
+        </div>
+
+        <!-- =======================================================
+             GRID DE PRODUTOS (21 ITENS — 3 POR CATEGORIA)
+             ======================================================= -->
+        <div id="menu-products-grid" class="products-grid">
+
+          <!-- ================= GRUPO 1: BEBIDAS QUENTES ================= -->
+          <!-- Item 1: Café Expresso -->
+          <article class="product-card reveal-on-scroll" data-product-id="1" data-category-id="1">
+            <div class="card-img-wrapper">
+              <span class="card-badge badge-bestseller">Clássico</span>
+              <img src="../img/espresso.jpg" data-default-src="../img/espresso.jpg" alt="Café Expresso" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Bebidas Quentes</span>
+              <h3 class="card-title">Café Expresso</h3>
+              <p class="card-desc">Extrato puro de grão 100% arábica de torra média, crema aveludada e notas intensas de cacau e caramelo.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 14,80</span>
+                <a href="pedidos.html?produto=1" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 2: Cappuccino -->
+          <article class="product-card reveal-on-scroll" data-product-id="2" data-category-id="1">
+            <div class="card-img-wrapper">
+              <span class="card-badge badge-bestseller">Mais Pedido</span>
+              <img src="../img/cappuccino.jpg" data-default-src="../img/cappuccino.jpg" alt="Cappuccino" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Bebidas Quentes</span>
+              <h3 class="card-title">Cappuccino</h3>
+              <p class="card-desc">Harmonia perfeita entre espresso encorpado, leite vaporizado em microespuma sedosa e toque de canela.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 26,65</span>
+                <a href="pedidos.html?produto=2" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 3: Mocaccino -->
+          <article class="product-card reveal-on-scroll" data-product-id="3" data-category-id="1">
+            <div class="card-img-wrapper">
+              <img src="../img/mocha.jpg" data-default-src="../img/mocha.jpg" alt="Mocaccino" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Bebidas Quentes</span>
+              <h3 class="card-title">Mocaccino</h3>
+              <p class="card-desc">Espresso duplo combinado com ganache de chocolate meio amargo 70%, leite cremoso e raspas de cacau.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 28,50</span>
+                <a href="pedidos.html?produto=3" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================= GRUPO 2: BEBIDAS GELADAS ================= -->
+          <!-- Item 4: Café Gelado (Iced Coffee) -->
+          <article class="product-card reveal-on-scroll" data-product-id="4" data-category-id="2">
+            <div class="card-img-wrapper">
+              <span class="card-badge badge-new">Refrescante</span>
+              <img src="../img/icedlatte.jpg" data-default-src="../img/icedlatte.jpg" alt="Café Gelado (Iced Coffee)" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Bebidas Geladas</span>
+              <h3 class="card-title">Café Gelado (Iced Coffee)</h3>
+              <p class="card-desc">Espresso duplo sobre pedras de gelo cristalino com leite cremoso e toque de fava de baunilha.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 24,50</span>
+                <a href="pedidos.html?produto=4" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 5: Cold Brew -->
+          <article class="product-card reveal-on-scroll" data-product-id="5" data-category-id="2">
+            <div class="card-img-wrapper">
+              <span class="card-badge badge-bestseller">18h Infusão</span>
+              <img src="../img/coldbrew.jpg" data-default-src="../img/coldbrew.jpg" alt="Cold Brew" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Bebidas Geladas</span>
+              <h3 class="card-title">Cold Brew</h3>
+              <p class="card-desc">Café especial infusionado a frio lentamente por 18 horas, suave, refrescante e com notas cítricas.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 27,90</span>
+                <a href="pedidos.html?produto=5" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 6: Frappé -->
+          <article class="product-card reveal-on-scroll" data-product-id="6" data-category-id="2">
+            <div class="card-img-wrapper">
+              <img src="../img/macchiato.jpg" data-default-src="../img/macchiato.jpg" alt="Frappé" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Bebidas Geladas</span>
+              <h3 class="card-title">Frappé</h3>
+              <p class="card-desc">Batido gelado e cremoso de café espresso especial, sorvete de creme, calda de caramelo salgado e chantilly.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 31,00</span>
+                <a href="pedidos.html?produto=6" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================= GRUPO 3: PADARIA E CONFEITARIA ================= -->
+          <!-- Item 7: Croissant -->
+          <article class="product-card reveal-on-scroll" data-product-id="7" data-category-id="3">
+            <div class="card-img-wrapper">
+              <span class="card-badge badge-bestseller">Fornada do Dia</span>
+              <img src="../img/croissant.jpg" data-default-src="../img/croissant.jpg" alt="Croissant" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Padaria e Confeitaria</span>
+              <h3 class="card-title">Croissant</h3>
+              <p class="card-desc">Massa folhada francesa de fermentação lenta, dourada e crocante por fora e macia com manteiga extra por dentro.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 16,50</span>
+                <a href="pedidos.html?produto=7" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 8: Brownie -->
+          <article class="product-card reveal-on-scroll" data-product-id="8" data-category-id="3">
+            <div class="card-img-wrapper">
+              <img src="../img/brownie.jpg" data-default-src="../img/brownie.jpg" alt="Brownie" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Padaria e Confeitaria</span>
+              <h3 class="card-title">Brownie</h3>
+              <p class="card-desc">Brownie fudge de chocolate belga meio amargo com casquinha crocante, interior úmido e nozes pecan.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 18,90</span>
+                <a href="pedidos.html?produto=8" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 9: Cheesecake -->
+          <article class="product-card reveal-on-scroll" data-product-id="9" data-category-id="3">
+            <div class="card-img-wrapper">
+              <span class="card-badge badge-new">Chef Pâtissier</span>
+              <img src="../img/cheesecake.jpg" data-default-src="../img/cheesecake.jpg" alt="Cheesecake" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Padaria e Confeitaria</span>
+              <h3 class="card-title">Cheesecake</h3>
+              <p class="card-desc">Base crocante amanteigada, creme suave de cream cheese com toque cítrico e calda rústica de frutas vermelhas.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 24,00</span>
+                <a href="pedidos.html?produto=9" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================= GRUPO 4: LANCHES SALGADOS ================= -->
+          <!-- Item 10: Sanduíche Natural -->
+          <article class="product-card reveal-on-scroll" data-product-id="10" data-category-id="4">
+            <div class="card-img-wrapper">
+              <span class="card-badge badge-new">Artesanal</span>
+              <img src="../img/caprese.jpg" data-default-src="../img/caprese.jpg" alt="Sanduíche Natural" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Lanches Salgados</span>
+              <h3 class="card-title">Sanduíche Natural</h3>
+              <p class="card-desc">Ciabatta artesanal tostada no azeite com muçarela de búfala, tomate confit, folhas verdes e pesto de manjericão.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 26,00</span>
+                <a href="pedidos.html?produto=10" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 11: Misto Quente -->
+          <article class="product-card reveal-on-scroll" data-product-id="11" data-category-id="4">
+            <div class="card-img-wrapper">
+              <img src="../img/torrada.jpg" data-default-src="../img/torrada.jpg" alt="Misto Quente" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Lanches Salgados</span>
+              <h3 class="card-title">Misto Quente</h3>
+              <p class="card-desc">Pão brioche dourado na manteiga clarificada com queijo gruyère e prato derretidos e presunto royal.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 22,50</span>
+                <a href="pedidos.html?produto=11" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 12: Pão de Queijo Recheado -->
+          <article class="product-card reveal-on-scroll" data-product-id="12" data-category-id="4">
+            <div class="card-img-wrapper">
+              <span class="card-badge badge-bestseller">Mineiro</span>
+              <img src="../img/paodequeijo.jpg" data-default-src="../img/paodequeijo.jpg" alt="Pão de Queijo Recheado" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Lanches Salgados</span>
+              <h3 class="card-title">Pão de Queijo Recheado</h3>
+              <p class="card-desc">Pão de queijo mineiro da Serra da Canastra assado na hora, recheado com requeijão cremoso de corte.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 12,00</span>
+                <a href="pedidos.html?produto=12" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================= GRUPO 5: SOBREMESAS ================= -->
+          <!-- Item 13: Tiramisù -->
+          <article class="product-card reveal-on-scroll" data-product-id="13" data-category-id="5">
+            <div class="card-img-wrapper">
+              <span class="card-badge badge-bestseller">Especialidade</span>
+              <img src="../img/tiramisu.jpg" data-default-src="../img/tiramisu.jpg" alt="Tiramisù" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Sobremesas</span>
+              <h3 class="card-title">Tiramisù</h3>
+              <p class="card-desc">Sobremesa clássica italiana com biscoitos embebidos em café espresso, creme de mascarpone e cacau puro.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 34,00</span>
+                <a href="pedidos.html?produto=13" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 14: Petit Gâteau -->
+          <article class="product-card reveal-on-scroll" data-product-id="14" data-category-id="5">
+            <div class="card-img-wrapper">
+              <img src="../img/affogato.jpg" data-default-src="../img/affogato.jpg" alt="Petit Gâteau" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Sobremesas</span>
+              <h3 class="card-title">Petit Gâteau</h3>
+              <p class="card-desc">Bolinho quente de chocolate nobre com centro fluido, acompanhado de gelato de baunilha e calda quente.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 36,50</span>
+                <a href="pedidos.html?produto=14" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 15: Pudim -->
+          <article class="product-card reveal-on-scroll" data-product-id="15" data-category-id="5">
+            <div class="card-img-wrapper">
+              <img src="../img/pudim.jpg" data-default-src="../img/pudim.jpg" alt="Pudim" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Sobremesas</span>
+              <h3 class="card-title">Pudim</h3>
+              <p class="card-desc">Pudim de leite condensado lisinho e aveludado com fava de baunilha e calda âmbar de caramelo.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 21,00</span>
+                <a href="pedidos.html?produto=15" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================= GRUPO 6: OPÇÕES SAUDÁVEIS ================= -->
+          <!-- Item 16: Salada de Frutas -->
+          <article class="product-card reveal-on-scroll" data-product-id="16" data-category-id="6">
+            <div class="card-img-wrapper">
+              <span class="card-badge badge-new">Leve &amp; Fresco</span>
+              <img src="../img/salada-frutas.jpg" data-default-src="../img/salada-frutas.jpg" alt="Salada de Frutas" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Opções Saudáveis</span>
+              <h3 class="card-title">Salada de Frutas</h3>
+              <p class="card-desc">Bowl refrescante de frutas da estação selecionadas com sementes de chia, hortelã fresca e mel silvestre.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 21,50</span>
+                <a href="pedidos.html?produto=16" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 17: Iogurte com Granola -->
+          <article class="product-card reveal-on-scroll" data-product-id="17" data-category-id="6">
+            <div class="card-img-wrapper">
+              <img src="../img/parfait-iogurte.jpg" data-default-src="../img/parfait-iogurte.jpg" alt="Iogurte com Granola" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Opções Saudáveis</span>
+              <h3 class="card-title">Iogurte com Granola</h3>
+              <p class="card-desc">Parfait de iogurte grego natural com granola artesanal de castanhas, melado e compota de frutas vermelhas.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 23,00</span>
+                <a href="pedidos.html?produto=17" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 18: Tapioca -->
+          <article class="product-card reveal-on-scroll" data-product-id="18" data-category-id="6">
+            <div class="card-img-wrapper">
+              <span class="card-badge badge-bestseller">Sem Glúten</span>
+              <img src="../img/tapioca.jpg" data-default-src="../img/tapioca.jpg" alt="Tapioca" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Opções Saudáveis</span>
+              <h3 class="card-title">Tapioca</h3>
+              <p class="card-desc">Goma fininha e crocante na chapa recheada com queijo minas frescal, tomate seco artesanal e orégano.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 22,00</span>
+                <a href="pedidos.html?produto=18" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================= GRUPO 7: PRODUTOS PARA VENDA ================= -->
+          <!-- Item 19: Grãos de Café Especiais (250g) -->
+          <article class="product-card reveal-on-scroll" data-product-id="19" data-category-id="7">
+            <div class="card-img-wrapper">
+              <span class="card-badge badge-bestseller">Torra Exclusiva</span>
+              <img src="../img/graos-cafe.jpg" data-default-src="../img/graos-cafe.jpg" alt="Grãos de Café Especiais (250g)" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Produtos para Venda</span>
+              <h3 class="card-title">Grãos de Café Especiais (250g)</h3>
+              <p class="card-desc">Pacote com válvula aromática de grãos 100% arábica de torra média, notas de chocolate, avelã e caramelo.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 48,00</span>
+                <a href="pedidos.html?produto=19" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 20: Caneca Personalizada -->
+          <article class="product-card reveal-on-scroll" data-product-id="20" data-category-id="7">
+            <div class="card-img-wrapper">
+              <span class="card-badge badge-new">Edição Limitada</span>
+              <img src="../img/caneca.jpg" data-default-src="../img/caneca.jpg" alt="Caneca Personalizada" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Produtos para Venda</span>
+              <h3 class="card-title">Caneca Personalizada</h3>
+              <p class="card-desc">Caneca exclusiva em cerâmica artesanal fosca (320ml) com detalhes dourados e selo Grain &amp; Affection.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 55,00</span>
+                <a href="pedidos.html?produto=20" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 21: Geleia Artesanal -->
+          <article class="product-card reveal-on-scroll" data-product-id="21" data-category-id="7">
+            <div class="card-img-wrapper">
+              <img src="../img/geleia.jpg" data-default-src="../img/geleia.jpg" alt="Geleia Artesanal" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-category">Produtos para Venda</span>
+              <h3 class="card-title">Geleia Artesanal</h3>
+              <p class="card-desc">Pote de geleia caseira de frutas vermelhas cozida lentamente em tacho, sem conservantes (200g).</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 32,00</span>
+                <a href="pedidos.html?produto=21" class="card-order-btn">Escolher</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <p id="menu-empty-msg" class="text-muted" style="text-align: center; padding: 2rem;" hidden>
+          Nenhum item encontrado para o filtro ou busca selecionada.
+        </p>
+
+        <div class="order-summary-box reveal-on-scroll"
+          style="margin-top: 4rem; text-align: center; padding: 2.5rem; border-left: none; border: 1px solid var(--color-camel);">
+          <span class="subtitle-french" style="font-size: 2.5rem;">Personalizados</span>
+          <h3 style="margin-bottom: 0.5rem;">Deseja uma encomenda para evento especial?</h3>
+          <p style="max-width: 600px; margin: 0 auto 1.5rem;">
+            Preparamos cestas de pâtisserie, kits para brunch e cafés especiais para comemorações.
+          </p>
+          <a href="pedidos.html" class="btn btn-primary">Fazer Pedido Online</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="logo-icon">GA</div>
+            <span class="logo-text">Grain <span>&amp; Affection</span></span>
+          </div>
+          <p>Cafés especiais, padaria artesanal e muito afeto em cada pedido. Atendimento no balcão, nas 15 mesas ou por delivery.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="produtos.html">Cardápio Completo</a></li>
+            <li><a href="pedidos.html">Pedidos Online</a></li>
+            <li><a href="contato.html">Contato &amp; Reservas</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Horários</h4>
+          <ul class="footer-links">
+            <li>Seg - Sex: 07h30 às 20h00</li>
+            <li>Sábado: 08h00 às 22h00</li>
+            <li>Domingo: 08h30 às 19h00</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Localização</h4>
+          <p>Rua Augusta, 1200 — Consolação<br>São Paulo, SP</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Grain &amp; Affection Espresso. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/animations.js"></script>
+  <script src="../js/components/navbar.js"></script>
+  <script src="../js/components/carousel.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>
